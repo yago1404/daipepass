@@ -102,9 +102,16 @@ class _AddPlatformPageState extends State<AddPlatformPage> {
             SizedBox(
               height: 20,
             ),
-            Text(
-              'Selecione uma cor',
-              style: TextStyle(fontWeight: FontWeight.bold, color: theme.pink),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Selecione uma cor',
+                  style: TextStyle(fontWeight: FontWeight.bold, color: theme.pink),
+                  textAlign: TextAlign.left,
+                ),
+              ),
             ),
             Container(
               margin: EdgeInsets.all(20),

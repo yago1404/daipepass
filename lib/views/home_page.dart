@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                   if (platformList.length == 0) {
                     return Container(
                         child: Center(
-                      child: Text('Sem nada por enquanto'),
+                      child: Text('Sem nada para mostrar'),
                     ));
                   } else {
                     return Container(
