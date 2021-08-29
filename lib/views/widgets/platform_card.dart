@@ -104,13 +104,20 @@ class _PlatformCardState extends State<PlatformCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  this.widget.title,
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                Container(
+                  width: MediaQuery.of(context).size.width * .5 - 40,
+                  child: Text(
+                    this.widget.title,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
                 ),
-                Text(
-                  eyeIcon == Icons.visibility ? this.widget.password : '****',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                Container(
+                  alignment: Alignment.centerRight,
+                  width: MediaQuery.of(context).size.width * .5 - 40,
+                  child: Text(
+                    eyeIcon == Icons.visibility ? this.widget.password : '****',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
                 )
               ],
             ),
@@ -118,13 +125,20 @@ class _PlatformCardState extends State<PlatformCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  this.widget.username,
-                  style: TextStyle(color: Color(0xFFDDDDDD), fontSize: 15),
+                Container(
+                  width: MediaQuery.of(context).size.width * .5 - 40,
+                  child: Text(
+                    this.widget.username,
+                    style: TextStyle(color: Color(0xFFDDDDDD), fontSize: 15),
+                  ),
                 ),
-                Text(
-                  this.widget.email,
-                  style: TextStyle(color: Color(0xFFDDDDDD), fontSize: 15),
+                Container(
+                  alignment: Alignment.centerRight,
+                  width: MediaQuery.of(context).size.width * .5 - 40,
+                  child: Text(
+                    this.widget.email,
+                    style: TextStyle(color: Color(0xFFDDDDDD), fontSize: 15),
+                  ),
                 )
               ],
             ),
