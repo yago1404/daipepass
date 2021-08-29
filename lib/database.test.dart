@@ -1,5 +1,4 @@
 import 'package:daipepass/models/platform_data.dart';
-import 'package:flutter/material.dart';
 
 List<PlatformData> platformDataList = [
   /* PlatformData(

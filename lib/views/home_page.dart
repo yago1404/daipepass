@@ -5,7 +5,6 @@ import 'package:daipepass/repositories/platform_repository.dart';
 import 'package:daipepass/views/add_platform_page.dart';
 import 'package:daipepass/views/widgets/card_listview.dart';
 import 'package:daipepass/views/widgets/daipepass_input.dart';
-import 'package:daipepass/views/widgets/platform_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
