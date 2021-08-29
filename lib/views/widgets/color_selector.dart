@@ -48,8 +48,9 @@ class _ColorSelectorState extends State<ColorSelector> {
             ),
             Center(
               child: Icon(
-                this.widget.selectedColor == this.widget.color ? Icons.circle : null,
+                this.widget.selectedColor == this.widget.color ? Icons.check : null,
                 color: theme.green,
+                size: 30,
               ),
             ),
           ],
