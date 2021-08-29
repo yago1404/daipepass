@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
               hint: 'Pesquisar',
               iconData: Icons.search,
               controller: this.searchController,
+              callback: onChangeSearchController,
             ),
             SizedBox(height: 10),
             FutureBuilder(
@@ -63,7 +64,9 @@ class _HomePageState extends State<HomePage> {
                     ));
                   } else {
                     return Container(
-                      child: Expanded(child: CardListView(platformDataList: this.platformList)),
+                      child: Expanded(
+                          child: CardListView(
+                              platformDataList: this.platformList)),
                     );
                   }
                 }
@@ -103,6 +106,24 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     );
+  }
+
+  onChangeSearchController(String searchString) {
+    getPlatformList();
+    List<PlatformData> tempList = [];
+    this.platformList.forEach((PlatformData platform) => {
+          if (platform.title
+                  .toUpperCase()
+                  .contains(searchString.toUpperCase()) ||
+              platform.username
+                  .toUpperCase()
+                  .contains(searchString.toUpperCase()))
+            {tempList.add(platform)}
+        });
+    tempList = tempList.toSet().toList();
+    setState(() {
+      this.platformList = tempList;
+    });
   }
 
   getPlatformList() {

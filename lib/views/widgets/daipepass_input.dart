@@ -7,6 +7,7 @@ class DaipepassInput extends StatelessWidget {
   late final String hint;
   late final IconData iconData;
   late final TextEditingController controller;
+  late final Function? callback;
 
   DaipepassInput({
     Key? key,
@@ -14,6 +15,7 @@ class DaipepassInput extends StatelessWidget {
     required this.iconData,
     this.isPassword = false,
     required this.controller,
+    this.callback,
   }) : super(key: key);
 
   @override
@@ -27,7 +29,9 @@ class DaipepassInput extends StatelessWidget {
       ),
       child: TextFormField(
         onChanged: (text) {
-          // todo: implements search function with callback
+          if(this.callback != null) {
+            this.callback!(text);
+          }
         },
         controller: this.controller,
         obscureText: this.isPassword,
@@ -39,4 +43,6 @@ class DaipepassInput extends StatelessWidget {
       ),
     );
   }
+
+  voidFunction() {}
 }
