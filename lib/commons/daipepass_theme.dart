@@ -8,4 +8,5 @@ class DaipepassTheme {
   Color blue = Colors.blueAccent;
   Color black = Colors.black87;
   Color purple = Colors.purple;
+  Color red = Colors.redAccent;
 }

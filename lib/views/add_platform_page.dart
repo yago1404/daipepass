@@ -131,6 +131,11 @@ class _AddPlatformPageState extends State<AddPlatformPage> {
                     callbackOnSelectColor: onSelectColor,
                     selectedColor: this.selectedColor,
                   ),
+                  ColorSelector(
+                    color: theme.red,
+                    callbackOnSelectColor: onSelectColor,
+                    selectedColor: this.selectedColor,
+                  ),
                 ],
               ),
             )
