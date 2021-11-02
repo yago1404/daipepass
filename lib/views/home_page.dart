@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
         color: theme.pearl,
         child: Column(
           children: [
+            SizedBox(height: 10),
             DaipepassInput(
               hint: 'Pesquisar',
               iconData: Icons.search,
@@ -86,7 +87,6 @@ class _HomePageState extends State<HomePage> {
       centerTitle: true,
       title: Text(
         'Daipepass',
-        style: TextStyle(color: theme.grey),
       ),
       actions: [
         GestureDetector(
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
           },
           child: Container(
             margin: EdgeInsets.only(right: 20),
-            child: Icon(Icons.add, color: theme.grey),
+            child: Icon(Icons.add),
           ),
         ),
       ],

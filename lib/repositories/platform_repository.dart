@@ -13,9 +13,11 @@ class PlatformRepository {
     return true;
   }
 
-  Future<bool> deletePlatform({
-    required PlatformData platform,
-  }) async {
+  Future<bool> deletePlatform() async {
+    List<PlatformData> platformList = platformDataList;
+    platformList.forEach((element) {
+      print(element.title);
+    });
     return true;
   }
 }

@@ -14,7 +14,8 @@ class AddPlatformPage extends StatefulWidget {
   final PlatformRepository platformRepository = PlatformRepository();
   late final Function callbackCheckList;
 
-  AddPlatformPage({Key? key, required this.callbackCheckList}) : super(key: key);
+  AddPlatformPage({Key? key, required this.callbackCheckList})
+      : super(key: key);
 
   @override
   _AddPlatformPageState createState() => _AddPlatformPageState();
@@ -57,8 +58,7 @@ class _AddPlatformPageState extends State<AddPlatformPage> {
             },
             child: Text(
               'Cancelar',
-              style: TextStyle(
-                  color: theme.pink, fontWeight: FontWeight.bold, fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ),
         ],
@@ -75,6 +75,7 @@ class _AddPlatformPageState extends State<AddPlatformPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: 10),
             DaipepassInput(
               hint: 'Título',
               iconData: Icons.supervised_user_circle,
@@ -108,7 +109,8 @@ class _AddPlatformPageState extends State<AddPlatformPage> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Selecione uma cor',
-                  style: TextStyle(fontWeight: FontWeight.bold, color: theme.pink),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: theme.pink),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -189,6 +191,9 @@ class _AddPlatformPageState extends State<AddPlatformPage> {
               .addPlatform(platform: newPlatform)) {
             Navigator.pop(context);
             this.widget.callbackCheckList();
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Algo deu errado')));
           }
         } else {
           ScaffoldMessenger.of(context).showSnackBar(

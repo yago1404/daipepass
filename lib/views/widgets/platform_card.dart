@@ -1,4 +1,5 @@
 import 'package:daipepass/commons/daipepass_theme.dart';
+import 'package:daipepass/repositories/platform_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,6 +28,7 @@ class _PlatformCardState extends State<PlatformCard> {
   late IconData eyeIcon;
 
   final DaipepassTheme theme = DaipepassTheme();
+  final PlatformRepository platformRepository = PlatformRepository();
 
   @override
   void initState() {
@@ -48,7 +50,9 @@ class _PlatformCardState extends State<PlatformCard> {
                         'Deseja apagar a senha para ${this.widget.title}?')),
                 actions: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      this.platformRepository.deletePlatform();
+                    },
                     child: Text('Apagar', style: TextStyle(color: theme.pink)),
                   ),
                   TextButton(
