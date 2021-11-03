@@ -10,14 +10,13 @@ class PlatformRepository {
   Future<bool> addPlatform({
     required PlatformData platform,
   }) async {
+    print('add platform ${platform.title}');
     return true;
   }
 
-  Future<bool> deletePlatform() async {
+  Future<bool> deletePlatform({required String title}) async {
+    print(title);
     List<PlatformData> platformList = platformDataList;
-    platformList.forEach((element) {
-      print(element.title);
-    });
     return true;
   }
 }

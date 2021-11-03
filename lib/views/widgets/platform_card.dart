@@ -51,7 +51,7 @@ class _PlatformCardState extends State<PlatformCard> {
                 actions: [
                   TextButton(
                     onPressed: () {
-                      this.platformRepository.deletePlatform();
+                      this.platformRepository.deletePlatform(title: this.widget.title);
                     },
                     child: Text('Apagar', style: TextStyle(color: theme.pink)),
                   ),
